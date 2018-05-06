@@ -104,9 +104,9 @@ bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
   let sender = message.author;
-  if (!message.content.startsWith(process.env.PREFIX)) return;
+  if (!message.content.startsWith(process.env.BOT_PREFIX)) return;
 
-  let prefix = process.env.PREFIX;
+  let prefix = process.env.BOT_PREFIX;
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
@@ -183,4 +183,4 @@ bot.on("message", async message => {
   }
 });
 
-bot.login(process.env.TOKEN);
+bot.login(process.env.BOT_TOKEN);
